@@ -1,0 +1,83 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Julian\\OneDrive\\Escritorio\\Practica 4\\webFestRock\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E50D214D-73FA-4F09-ADD3-F8384C108226}|webFestRock\\webFestRock.csproj|c:\\users\\julian\\onedrive\\escritorio\\practica 4\\webfestrock\\webfestrock\\paginas\\frminicio.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E50D214D-73FA-4F09-ADD3-F8384C108226}|webFestRock\\webFestRock.csproj|solutionrelative:webfestrock\\paginas\\frminicio.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50D214D-73FA-4F09-ADD3-F8384C108226}|webFestRock\\webFestRock.csproj|c:\\users\\julian\\onedrive\\escritorio\\practica 4\\webfestrock\\webfestrock\\paginas\\scripts\\frminicio.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E50D214D-73FA-4F09-ADD3-F8384C108226}|webFestRock\\webFestRock.csproj|solutionrelative:webfestrock\\paginas\\scripts\\frminicio.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E50D214D-73FA-4F09-ADD3-F8384C108226}|webFestRock\\webFestRock.csproj|c:\\users\\julian\\onedrive\\escritorio\\practica 4\\webfestrock\\webfestrock\\paginas\\paginabase.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E50D214D-73FA-4F09-ADD3-F8384C108226}|webFestRock\\webFestRock.csproj|solutionrelative:webfestrock\\paginas\\paginabase.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmInicio.js",
+              "DocumentMoniker": "C:\\Users\\Julian\\OneDrive\\Escritorio\\Practica 4\\webFestRock\\webFestRock\\Paginas\\Scripts\\frmInicio.js",
+              "RelativeDocumentMoniker": "webFestRock\\Paginas\\Scripts\\frmInicio.js",
+              "ToolTip": "C:\\Users\\Julian\\OneDrive\\Escritorio\\Practica 4\\webFestRock\\webFestRock\\Paginas\\Scripts\\frmInicio.js",
+              "RelativeToolTip": "webFestRock\\Paginas\\Scripts\\frmInicio.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-27T00:49:06.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaginaBase.html",
+              "DocumentMoniker": "C:\\Users\\Julian\\OneDrive\\Escritorio\\Practica 4\\webFestRock\\webFestRock\\Paginas\\PaginaBase.html",
+              "RelativeDocumentMoniker": "webFestRock\\Paginas\\PaginaBase.html",
+              "ToolTip": "C:\\Users\\Julian\\OneDrive\\Escritorio\\Practica 4\\webFestRock\\webFestRock\\Paginas\\PaginaBase.html",
+              "RelativeToolTip": "webFestRock\\Paginas\\PaginaBase.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-27T00:48:55.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmInicio.html",
+              "DocumentMoniker": "C:\\Users\\Julian\\OneDrive\\Escritorio\\Practica 4\\webFestRock\\webFestRock\\Paginas\\frmInicio.html",
+              "RelativeDocumentMoniker": "webFestRock\\Paginas\\frmInicio.html",
+              "ToolTip": "C:\\Users\\Julian\\OneDrive\\Escritorio\\Practica 4\\webFestRock\\webFestRock\\Paginas\\frmInicio.html",
+              "RelativeToolTip": "webFestRock\\Paginas\\frmInicio.html",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-27T00:40:39.4Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
