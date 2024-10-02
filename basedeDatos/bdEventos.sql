@@ -76,3 +76,21 @@ create table tblDetInsc (
   idBandArt int Not Null, 
   Edad int Not Null ); 
 go 
+
+
+
+
+ALTER TABLE tblEvento   add Foreign key (idCiudad)  REFERENCES tblCiudad  (Codigo) 
+ALTER TABLE tblCiudad   add Foreign key (idDpto)    REFERENCES tblDpto    (Codigo) 
+ALTER TABLE tblArtista  add Foreign key (idtipoDoc) REFERENCES tblTipoDoc (Codigo) 
+ALTER TABLE tblBanda    add Foreign key (idCiudad)  REFERENCES tblCiudad  (Codigo) 
+ALTER TABLE tblArtista  add Foreign key (idGenero)  REFERENCES tblGenero  (Codigo) 
+ALTER TABLE tblArtista  add Foreign key (idCiudad)  REFERENCES tblCiudad  (Codigo) 
+ALTER TABLE tblBandaArt add Foreign key (idBanda)   REFERENCES tblBanda   (Codigo) 
+ALTER TABLE tblBandaArt add Foreign key (idArtista) REFERENCES tblArtista (Codigo) 
+ALTER TABLE tblBandaArt add Foreign key (idInstrum) REFERENCES tblInstrum (Codigo) 
+ALTER TABLE tblInscrip  add Foreign key (idEvento)  REFERENCES tblEvento  (Codigo) 
+ALTER TABLE tblInscrip  add Foreign key (idBanda)   REFERENCES tblBanda   (Codigo) 
+ALTER TABLE tblDetInsc  add Foreign key (idNroInsc) REFERENCES tblInscrip (Codigo) 
+ALTER TABLE tblDetInsc  add Foreign key (idBandArt) REFERENCES tblBandaArt(Codigo) 
+go 
