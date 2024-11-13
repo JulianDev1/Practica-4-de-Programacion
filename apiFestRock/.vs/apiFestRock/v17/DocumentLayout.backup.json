@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{871E1DD2-ABFF-4A74-B157-BB0875EE3A93}|apiFestRock\\apiFestRock.csproj|d:\\practica 4_1_5\\practica 4\\apifestrock\\apifestrock\\clases\\clsopeinscrip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{871E1DD2-ABFF-4A74-B157-BB0875EE3A93}|apiFestRock\\apiFestRock.csproj|solutionrelative:apifestrock\\clases\\clsopeinscrip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{871E1DD2-ABFF-4A74-B157-BB0875EE3A93}|apiFestRock\\apiFestRock.csproj|d:\\practica 4_1_5\\practica 4\\apifestrock\\apifestrock\\controllers\\detinscripcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{871E1DD2-ABFF-4A74-B157-BB0875EE3A93}|apiFestRock\\apiFestRock.csproj|solutionrelative:apifestrock\\controllers\\detinscripcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{871E1DD2-ABFF-4A74-B157-BB0875EE3A93}|apiFestRock\\apiFestRock.csproj|d:\\practica 4_1_5\\practica 4\\apifestrock\\apifestrock\\clases\\clsopedetinsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{871E1DD2-ABFF-4A74-B157-BB0875EE3A93}|apiFestRock\\apiFestRock.csproj|solutionrelative:apifestrock\\clases\\clsopedetinsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{871E1DD2-ABFF-4A74-B157-BB0875EE3A93}|apiFestRock\\apiFestRock.csproj|D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\apifestrock\\models\\tbldetinsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{871E1DD2-ABFF-4A74-B157-BB0875EE3A93}|apiFestRock\\apiFestRock.csproj|solutionrelative:apifestrock\\models\\tbldetinsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsOpeInscrip.cs",
+              "DocumentMoniker": "D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\apiFestRock\\Clases\\clsOpeInscrip.cs",
+              "RelativeDocumentMoniker": "apiFestRock\\Clases\\clsOpeInscrip.cs",
+              "ToolTip": "D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\apiFestRock\\Clases\\clsOpeInscrip.cs",
+              "RelativeToolTip": "apiFestRock\\Clases\\clsOpeInscrip.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA0wEsAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T23:42:35.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "detInscripController.cs",
+              "DocumentMoniker": "D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\apiFestRock\\Controllers\\detInscripController.cs",
+              "RelativeDocumentMoniker": "apiFestRock\\Controllers\\detInscripController.cs",
+              "ToolTip": "D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\apiFestRock\\Controllers\\detInscripController.cs",
+              "RelativeToolTip": "apiFestRock\\Controllers\\detInscripController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAlwDUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T23:28:42.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsOpeDetInsc.cs",
+              "DocumentMoniker": "D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\apiFestRock\\Clases\\clsOpeDetInsc.cs",
+              "RelativeDocumentMoniker": "apiFestRock\\Clases\\clsOpeDetInsc.cs",
+              "ToolTip": "D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\apiFestRock\\Clases\\clsOpeDetInsc.cs",
+              "RelativeToolTip": "apiFestRock\\Clases\\clsOpeDetInsc.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAhwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T23:25:37.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tblDetInsc.cs",
+              "DocumentMoniker": "D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\apiFestRock\\Models\\tblDetInsc.cs",
+              "RelativeDocumentMoniker": "apiFestRock\\Models\\tblDetInsc.cs",
+              "ToolTip": "D:\\Practica 4_1_5\\Practica 4\\apiFestRock\\apiFestRock\\Models\\tblDetInsc.cs",
+              "RelativeToolTip": "apiFestRock\\Models\\tblDetInsc.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T00:22:07.451Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bec8e79cb796415c993310adef1d29af" Name="Diagram1">
+        <EntityTypeShape EntityType="bdEventosModel.tblArtista" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblBanda" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblBandaArt" Width="1.5" PointX="7.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblCiudad" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblDetInsc" Width="1.5" PointX="9.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblDpto" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblEvento" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblGenero" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblInscrip" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblInstrum" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdEventosModel.tblTipoDoc" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="bdEventosModel.FK__tblArtist__idCiu__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblArtist__idGen__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblArtist__idtip__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblBandaA__idArt__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblBanda__idCiud__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblBandaA__idBan__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblInscri__idBan__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblBandaA__idIns__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblDetIns__idBan__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblCiudad__idDpt__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblEvento__idCiu__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblDetIns__idNro__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="bdEventosModel.FK__tblInscri__idEve__5535A963" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

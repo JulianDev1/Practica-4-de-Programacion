@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Practica 4_1_5\\Practica 4\\webFestRock\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9254F042-2F38-49F8-BCF1-1B100274CA4B}|webFestRock\\webFestRock.csproj|d:\\practica 4_1_5\\practica 4\\webfestrock\\webfestrock\\paginas\\scripts\\frminscrip.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9254F042-2F38-49F8-BCF1-1B100274CA4B}|webFestRock\\webFestRock.csproj|solutionrelative:webfestrock\\paginas\\scripts\\frminscrip.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9254F042-2F38-49F8-BCF1-1B100274CA4B}|webFestRock\\webFestRock.csproj|d:\\practica 4_1_5\\practica 4\\webfestrock\\webfestrock\\paginas\\frminscrip.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9254F042-2F38-49F8-BCF1-1B100274CA4B}|webFestRock\\webFestRock.csproj|solutionrelative:webfestrock\\paginas\\frminscrip.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmInscrip.html",
+              "DocumentMoniker": "D:\\Practica 4_1_5\\Practica 4\\webFestRock\\webFestRock\\Paginas\\frmInscrip.html",
+              "RelativeDocumentMoniker": "webFestRock\\Paginas\\frmInscrip.html",
+              "ToolTip": "D:\\Practica 4_1_5\\Practica 4\\webFestRock\\webFestRock\\Paginas\\frmInscrip.html",
+              "RelativeToolTip": "webFestRock\\Paginas\\frmInscrip.html",
+              "ViewState": "AgIAACcAAAAAAAAAAADwv1YAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-12T23:58:22.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmInscrip.js",
+              "DocumentMoniker": "D:\\Practica 4_1_5\\Practica 4\\webFestRock\\webFestRock\\Paginas\\Scripts\\frmInscrip.js",
+              "RelativeDocumentMoniker": "webFestRock\\Paginas\\Scripts\\frmInscrip.js",
+              "ToolTip": "D:\\Practica 4_1_5\\Practica 4\\webFestRock\\webFestRock\\Paginas\\Scripts\\frmInscrip.js",
+              "RelativeToolTip": "webFestRock\\Paginas\\Scripts\\frmInscrip.js",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAcwFkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-12T23:47:12.398Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

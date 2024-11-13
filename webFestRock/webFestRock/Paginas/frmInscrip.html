@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maestro de Inscripciones</title>
+    <!-- Scripts Base Sup -->
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+    <link href="Estilos/all.min.css" rel="stylesheet" />
+    <!-- Select2 -->
+    <link href="Estilos/select2.min.css" rel="stylesheet" />
+    <link href="Estilos/select2-bootstrap4.min.css" rel="stylesheet" />
+    <!--Estilos para las tablas(datatables)-->
+    <link href="Estilos/dataTables.min.css" rel="stylesheet" />
+    <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+
+    <style>
+        .label_1 {
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #f2eded;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        .label_2 {
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #f2eded;
+            border-style: solid;
+            border-width: 1px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12" id="dvMenu">
+                    <!-- Para incrustar la página que contiene el ménu de navegación-->
+                </div>
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Maestro de Inscripción</h3>
+                        </div>
+                        <form id="frmDatosIn">
+                            <div class="card-body">
+                                <div class="card card-gray-dark">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Datos de Entrada</h3>
+                                    </div>
+
+                                    <div class="card-body">
+
+                                        <div class="row">
+                                            <!-- Inicio Row 1 de inscrip -->
+                                            <div class="col-md-2">
+                                                <!--inicio codigo-->
+                                                <div class="form-group">
+                                                    <label for="txtCodigo">Código:</label>
+                                                    <input type="text" class="label_2" id="txtCodigo" width="15" placeholder="Cargando Código..." disabled>
+                                                </div>
+                                            </div><!--fin codigo-->
+
+                                            <div class="col-md-4">
+                                                <!--inicio select combo box Evento-->
+                                                <div class="form-group">
+                                                    <label for="cboEvento">Evento:</label>
+                                                    <select id="cboEvento" class="form-control">
+                                                    </select>
+                                                </div>
+                                            </div><!--fin selec combo box Evento-->
+
+
+                                            <div class="col-md-2">
+                                                <!--inicio fechaActual-->
+                                                <div class="form-group">
+                                                    <label for="lblFechaAct">Fecha Actual:</label>
+                                                    <input  class="label_2" id="lblFechaAct" width="15"  disabled>
+                                                </div>
+                                            </div><!--fin FechaActual-->
+
+                                        </div> <!-- Final del Row 1 frmArt -->
+
+                                        <div class="row">
+                                            <!-- Inicio Del row 2 frm Artista -->
+
+                                            <div class="col-md-4">
+                                                <!--inicio select combo box Banda-->
+                                                <div class="form-group">
+                                                    <label for="cboBanda">Banda:</label>
+                                                    <select id="cboBanda" class="form-control" onchange="llenarComboArtista();"
+>
+                                                    </select>
+                                                </div>
+                                            </div><!--fin selec combo box Banda-->
+
+                                            <div class="col-md-4">
+                                                <!--inicio txt Representante-->
+                                                <div class="form-group">
+                                                    <label for="txtRepres">Representante: </label>
+                                                    <input type="text" class="form-control" id="txtRepres" placeholder="Ingrese nombre del Representante...">
+                                                </div>
+                                            </div><!--fin txt Representante-->
+
+                                            <div class="col-md-2">
+                                                <!--inicio txt Telefono-->
+                                                <div class="form-group">
+                                                    <label for="txtTel">Télefono:</label>
+                                                    <input type="tel" class="form-control" id="txtTel" placeholder="Ingrese télefono...">
+                                                </div>
+                                            </div><!--fin txt  Telefono-->
+
+                                            <div class="col-md-2">
+                                                <!-- inicio texto Valor-->
+                                                <div class="form-group">
+                                                    <label for="txtValor">Valor Inscripcion:</label>
+                                                    <input type="text" class="label_2" id="txtValor" placeholder="Ingrese Valor de Inscripcion" disabled>
+                                                </div>
+                                            </div> <!--fin texto Valor-->
+
+                                        </div> <!-- Fin del row 2 de frm Artista -->
+                                        <div class="row">
+                                            <!-- Inicio Row 3 de inscrip -->
+                                            <div class="col-md-6">
+                                                <!--inicio selec combo box Banda/Artista-->
+                                                <div class="form-group">
+                                                    <label for="cboBandArt">Banda/Artista: </label>
+                                                    <select id="cboBandArt" class="form-control"onchange = "consultarInstrum();">
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div><!--fin selec combo box genero-->
+                                            <div class="col-md-4">
+                                                <!--inicio txt Instrumento -->
+                                                <div class="form-group">
+                                                    <label for="txtInstrum">Instrumento:</label>
+                                                    <input type="text" class="label_1" id="txtInstrum" width="15" placeholder="Instrumento..." disabled>
+                                                </div>
+                                            </div><!--fin txt instrum-->
+                                            <div class="col-md-2">
+                                                <!-- inicio texto Edad-->
+                                                <div class="form-group">
+                                                    <label for="txtEdad">Edad:</label>
+                                                    <input type="text" class="form-control" id="txtEdad" placeholder="Ingrese Edad...">
+                                                </div>
+                                            </div> <!--fin texto Edad-->
+
+                                        </div> <!-- Final del Row 3 de inscrip -->
+                                        <!-- Acá para más rows para datos -->
+
+                                    </div>
+
+                                    <!-- Menú de Opciones -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnAgre" class="btn-block btn-lg btn-primary">Agregar</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnModi" class="btn-block btn-lg btn-primary">Modificar</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnBusc" class="btn-block btn-lg btn-primary">Buscar</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnCanc" class="btn-block btn-lg btn-primary">Cancelar/Limpiar</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnImpr" class="btn-block btn-lg btn-primary">Impresión</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Zona de Mensajes -->
+                                        <div class="card-footer">
+                                            <div id="dvMensaje" class=""></div>
+                                        </div>
+
+                                        <!-- Fin Menú de Opciones-->
+                                    </div>
+                                </div><!-- card card-gray-dark -->
+                                <!-- Acá row para la tabla -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table id="tablaDatos" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Fin row para la tabla -->
+
+                            </div>  <!-- /.card-body -->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Para los script de uso -->
+    <script src="../Scripts/jquery-3.7.0.js"></script>
+    <script src="../Scripts/bootstrap.bundle.js"></script>>
+    <!-- Select2 -->
+    <script src="../Scripts/select2.min.js"></script>
+    <script src="Scripts/Comunes/Combos.js"></script>
+    <!-- Tabla -->
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
+    <!--Librerías comunes de JavaScript para las Tablas -->
+    <script src="Scripts/Comunes/Tablas.js"></script>
+    <!-- Impresión -->
+    <script src="Scripts/frmInscrip.js"></script>
+</body>
+</html>

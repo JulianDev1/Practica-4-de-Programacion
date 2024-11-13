@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bdEventosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblArtista">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="idtipoDoc" Type="int" Nullable="false" />
+          <Property Name="nroDoc" Type="int" Nullable="false" />
+          <Property Name="idGenero" Type="int" Nullable="false" />
+          <Property Name="idCiudad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBanda">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AnioFund" Type="int" Nullable="false" />
+          <Property Name="idCiudad" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBandaArt">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="idBanda" Type="int" Nullable="false" />
+          <Property Name="idArtista" Type="int" Nullable="false" />
+          <Property Name="idInstrum" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblCiudad">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idDpto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDetInsc">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="idNroInsc" Type="int" Nullable="false" />
+          <Property Name="idBandArt" Type="int" Nullable="false" />
+          <Property Name="Edad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDpto">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblEvento">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idCiudad" Type="int" Nullable="false" />
+          <Property Name="Anio" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Lugar" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblGenero">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblInscrip">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="idEvento" Type="int" Nullable="false" />
+          <Property Name="idBanda" Type="int" Nullable="false" />
+          <Property Name="Represenante" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="valor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblInstrum">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTipoDoc">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblArtist__idCiu__5165187F">
+          <End Role="tblCiudad" Type="Self.tblCiudad" Multiplicity="1" />
+          <End Role="tblArtista" Type="Self.tblArtista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCiudad">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblArtista">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblArtist__idGen__5070F446">
+          <End Role="tblGenero" Type="Self.tblGenero" Multiplicity="1" />
+          <End Role="tblArtista" Type="Self.tblArtista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGenero">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblArtista">
+              <PropertyRef Name="idGenero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblArtist__idtip__4E88ABD4">
+          <End Role="tblTipoDoc" Type="Self.tblTipoDoc" Multiplicity="1" />
+          <End Role="tblArtista" Type="Self.tblArtista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTipoDoc">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblArtista">
+              <PropertyRef Name="idtipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBanda__idCiud__4F7CD00D">
+          <End Role="tblCiudad" Type="Self.tblCiudad" Multiplicity="1" />
+          <End Role="tblBanda" Type="Self.tblBanda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCiudad">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblBanda">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBandaA__idArt__534D60F1">
+          <End Role="tblArtista" Type="Self.tblArtista" Multiplicity="1" />
+          <End Role="tblBandaArt" Type="Self.tblBandaArt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArtista">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblBandaArt">
+              <PropertyRef Name="idArtista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBandaA__idBan__52593CB8">
+          <End Role="tblBanda" Type="Self.tblBanda" Multiplicity="1" />
+          <End Role="tblBandaArt" Type="Self.tblBandaArt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBanda">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblBandaArt">
+              <PropertyRef Name="idBanda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBandaA__idIns__5441852A">
+          <End Role="tblInstrum" Type="Self.tblInstrum" Multiplicity="1" />
+          <End Role="tblBandaArt" Type="Self.tblBandaArt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstrum">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblBandaArt">
+              <PropertyRef Name="idInstrum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCiudad__idDpt__4D94879B">
+          <End Role="tblDpto" Type="Self.tblDpto" Multiplicity="1" />
+          <End Role="tblCiudad" Type="Self.tblCiudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDpto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblCiudad">
+              <PropertyRef Name="idDpto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDetIns__idBan__5812160E">
+          <End Role="tblBandaArt" Type="Self.tblBandaArt" Multiplicity="1" />
+          <End Role="tblDetInsc" Type="Self.tblDetInsc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBandaArt">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblDetInsc">
+              <PropertyRef Name="idBandArt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDetIns__idNro__571DF1D5">
+          <End Role="tblInscrip" Type="Self.tblInscrip" Multiplicity="1" />
+          <End Role="tblDetInsc" Type="Self.tblDetInsc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInscrip">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblDetInsc">
+              <PropertyRef Name="idNroInsc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEvento__idCiu__4CA06362">
+          <End Role="tblCiudad" Type="Self.tblCiudad" Multiplicity="1" />
+          <End Role="tblEvento" Type="Self.tblEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCiudad">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblEvento">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInscri__idBan__5629CD9C">
+          <End Role="tblBanda" Type="Self.tblBanda" Multiplicity="1" />
+          <End Role="tblInscrip" Type="Self.tblInscrip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBanda">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblInscrip">
+              <PropertyRef Name="idBanda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInscri__idEve__5535A963">
+          <End Role="tblEvento" Type="Self.tblEvento" Multiplicity="1" />
+          <End Role="tblInscrip" Type="Self.tblInscrip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEvento">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblInscrip">
+              <PropertyRef Name="idEvento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdEventosModelStoreContainer">
+          <EntitySet Name="tblArtista" EntityType="Self.tblArtista" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBanda" EntityType="Self.tblBanda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBandaArt" EntityType="Self.tblBandaArt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCiudad" EntityType="Self.tblCiudad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDetInsc" EntityType="Self.tblDetInsc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDpto" EntityType="Self.tblDpto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEvento" EntityType="Self.tblEvento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGenero" EntityType="Self.tblGenero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInscrip" EntityType="Self.tblInscrip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInstrum" EntityType="Self.tblInstrum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTipoDoc" EntityType="Self.tblTipoDoc" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblArtist__idCiu__5165187F" Association="Self.FK__tblArtist__idCiu__5165187F">
+            <End Role="tblCiudad" EntitySet="tblCiudad" />
+            <End Role="tblArtista" EntitySet="tblArtista" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblArtist__idGen__5070F446" Association="Self.FK__tblArtist__idGen__5070F446">
+            <End Role="tblGenero" EntitySet="tblGenero" />
+            <End Role="tblArtista" EntitySet="tblArtista" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblArtist__idtip__4E88ABD4" Association="Self.FK__tblArtist__idtip__4E88ABD4">
+            <End Role="tblTipoDoc" EntitySet="tblTipoDoc" />
+            <End Role="tblArtista" EntitySet="tblArtista" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBanda__idCiud__4F7CD00D" Association="Self.FK__tblBanda__idCiud__4F7CD00D">
+            <End Role="tblCiudad" EntitySet="tblCiudad" />
+            <End Role="tblBanda" EntitySet="tblBanda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBandaA__idArt__534D60F1" Association="Self.FK__tblBandaA__idArt__534D60F1">
+            <End Role="tblArtista" EntitySet="tblArtista" />
+            <End Role="tblBandaArt" EntitySet="tblBandaArt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBandaA__idBan__52593CB8" Association="Self.FK__tblBandaA__idBan__52593CB8">
+            <End Role="tblBanda" EntitySet="tblBanda" />
+            <End Role="tblBandaArt" EntitySet="tblBandaArt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBandaA__idIns__5441852A" Association="Self.FK__tblBandaA__idIns__5441852A">
+            <End Role="tblInstrum" EntitySet="tblInstrum" />
+            <End Role="tblBandaArt" EntitySet="tblBandaArt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCiudad__idDpt__4D94879B" Association="Self.FK__tblCiudad__idDpt__4D94879B">
+            <End Role="tblDpto" EntitySet="tblDpto" />
+            <End Role="tblCiudad" EntitySet="tblCiudad" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDetIns__idBan__5812160E" Association="Self.FK__tblDetIns__idBan__5812160E">
+            <End Role="tblBandaArt" EntitySet="tblBandaArt" />
+            <End Role="tblDetInsc" EntitySet="tblDetInsc" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDetIns__idNro__571DF1D5" Association="Self.FK__tblDetIns__idNro__571DF1D5">
+            <End Role="tblInscrip" EntitySet="tblInscrip" />
+            <End Role="tblDetInsc" EntitySet="tblDetInsc" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEvento__idCiu__4CA06362" Association="Self.FK__tblEvento__idCiu__4CA06362">
+            <End Role="tblCiudad" EntitySet="tblCiudad" />
+            <End Role="tblEvento" EntitySet="tblEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInscri__idBan__5629CD9C" Association="Self.FK__tblInscri__idBan__5629CD9C">
+            <End Role="tblBanda" EntitySet="tblBanda" />
+            <End Role="tblInscrip" EntitySet="tblInscrip" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInscri__idEve__5535A963" Association="Self.FK__tblInscri__idEve__5535A963">
+            <End Role="tblEvento" EntitySet="tblEvento" />
+            <End Role="tblInscrip" EntitySet="tblInscrip" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdEventosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblArtista">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idtipoDoc" Type="Int32" Nullable="false" />
+          <Property Name="nroDoc" Type="Int32" Nullable="false" />
+          <Property Name="idGenero" Type="Int32" Nullable="false" />
+          <Property Name="idCiudad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblCiudad" Relationship="Self.FK__tblArtist__idCiu__5165187F" FromRole="tblArtista" ToRole="tblCiudad" />
+          <NavigationProperty Name="tblGenero" Relationship="Self.FK__tblArtist__idGen__5070F446" FromRole="tblArtista" ToRole="tblGenero" />
+          <NavigationProperty Name="tblTipoDoc" Relationship="Self.FK__tblArtist__idtip__4E88ABD4" FromRole="tblArtista" ToRole="tblTipoDoc" />
+          <NavigationProperty Name="tblBandaArts" Relationship="Self.FK__tblBandaA__idArt__534D60F1" FromRole="tblArtista" ToRole="tblBandaArt" />
+        </EntityType>
+        <EntityType Name="tblBanda">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AnioFund" Type="Int32" Nullable="false" />
+          <Property Name="idCiudad" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblCiudad" Relationship="Self.FK__tblBanda__idCiud__4F7CD00D" FromRole="tblBanda" ToRole="tblCiudad" />
+          <NavigationProperty Name="tblBandaArts" Relationship="Self.FK__tblBandaA__idBan__52593CB8" FromRole="tblBanda" ToRole="tblBandaArt" />
+          <NavigationProperty Name="tblInscrips" Relationship="Self.FK__tblInscri__idBan__5629CD9C" FromRole="tblBanda" ToRole="tblInscrip" />
+        </EntityType>
+        <EntityType Name="tblBandaArt">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="idBanda" Type="Int32" Nullable="false" />
+          <Property Name="idArtista" Type="Int32" Nullable="false" />
+          <Property Name="idInstrum" Type="Int32" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblArtista" Relationship="Self.FK__tblBandaA__idArt__534D60F1" FromRole="tblBandaArt" ToRole="tblArtista" />
+          <NavigationProperty Name="tblBanda" Relationship="Self.FK__tblBandaA__idBan__52593CB8" FromRole="tblBandaArt" ToRole="tblBanda" />
+          <NavigationProperty Name="tblInstrum" Relationship="Self.FK__tblBandaA__idIns__5441852A" FromRole="tblBandaArt" ToRole="tblInstrum" />
+          <NavigationProperty Name="tblDetInscs" Relationship="Self.FK__tblDetIns__idBan__5812160E" FromRole="tblBandaArt" ToRole="tblDetInsc" />
+        </EntityType>
+        <EntityType Name="tblCiudad">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idDpto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblArtistas" Relationship="Self.FK__tblArtist__idCiu__5165187F" FromRole="tblCiudad" ToRole="tblArtista" />
+          <NavigationProperty Name="tblBandas" Relationship="Self.FK__tblBanda__idCiud__4F7CD00D" FromRole="tblCiudad" ToRole="tblBanda" />
+          <NavigationProperty Name="tblDpto" Relationship="Self.FK__tblCiudad__idDpt__4D94879B" FromRole="tblCiudad" ToRole="tblDpto" />
+          <NavigationProperty Name="tblEventoes" Relationship="Self.FK__tblEvento__idCiu__4CA06362" FromRole="tblCiudad" ToRole="tblEvento" />
+        </EntityType>
+        <EntityType Name="tblDetInsc">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="idNroInsc" Type="Int32" Nullable="false" />
+          <Property Name="idBandArt" Type="Int32" Nullable="false" />
+          <Property Name="Edad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblBandaArt" Relationship="Self.FK__tblDetIns__idBan__5812160E" FromRole="tblDetInsc" ToRole="tblBandaArt" />
+          <NavigationProperty Name="tblInscrip" Relationship="Self.FK__tblDetIns__idNro__571DF1D5" FromRole="tblDetInsc" ToRole="tblInscrip" />
+        </EntityType>
+        <EntityType Name="tblDpto">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblCiudads" Relationship="Self.FK__tblCiudad__idDpt__4D94879B" FromRole="tblDpto" ToRole="tblCiudad" />
+        </EntityType>
+        <EntityType Name="tblEvento">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idCiudad" Type="Int32" Nullable="false" />
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lugar" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblCiudad" Relationship="Self.FK__tblEvento__idCiu__4CA06362" FromRole="tblEvento" ToRole="tblCiudad" />
+          <NavigationProperty Name="tblInscrips" Relationship="Self.FK__tblInscri__idEve__5535A963" FromRole="tblEvento" ToRole="tblInscrip" />
+        </EntityType>
+        <EntityType Name="tblGenero">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblArtistas" Relationship="Self.FK__tblArtist__idGen__5070F446" FromRole="tblGenero" ToRole="tblArtista" />
+        </EntityType>
+        <EntityType Name="tblInscrip">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="idEvento" Type="Int32" Nullable="false" />
+          <Property Name="idBanda" Type="Int32" Nullable="false" />
+          <Property Name="Represenante" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="valor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblBanda" Relationship="Self.FK__tblInscri__idBan__5629CD9C" FromRole="tblInscrip" ToRole="tblBanda" />
+          <NavigationProperty Name="tblDetInscs" Relationship="Self.FK__tblDetIns__idNro__571DF1D5" FromRole="tblInscrip" ToRole="tblDetInsc" />
+          <NavigationProperty Name="tblEvento" Relationship="Self.FK__tblInscri__idEve__5535A963" FromRole="tblInscrip" ToRole="tblEvento" />
+        </EntityType>
+        <EntityType Name="tblInstrum">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblBandaArts" Relationship="Self.FK__tblBandaA__idIns__5441852A" FromRole="tblInstrum" ToRole="tblBandaArt" />
+        </EntityType>
+        <EntityType Name="tblTipoDoc">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblArtistas" Relationship="Self.FK__tblArtist__idtip__4E88ABD4" FromRole="tblTipoDoc" ToRole="tblArtista" />
+        </EntityType>
+        <Association Name="FK__tblArtist__idCiu__5165187F">
+          <End Role="tblCiudad" Type="Self.tblCiudad" Multiplicity="1" />
+          <End Role="tblArtista" Type="Self.tblArtista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCiudad">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblArtista">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblArtist__idGen__5070F446">
+          <End Role="tblGenero" Type="Self.tblGenero" Multiplicity="1" />
+          <End Role="tblArtista" Type="Self.tblArtista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGenero">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblArtista">
+              <PropertyRef Name="idGenero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblArtist__idtip__4E88ABD4">
+          <End Role="tblTipoDoc" Type="Self.tblTipoDoc" Multiplicity="1" />
+          <End Role="tblArtista" Type="Self.tblArtista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTipoDoc">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblArtista">
+              <PropertyRef Name="idtipoDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBandaA__idArt__534D60F1">
+          <End Role="tblArtista" Type="Self.tblArtista" Multiplicity="1" />
+          <End Role="tblBandaArt" Type="Self.tblBandaArt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArtista">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblBandaArt">
+              <PropertyRef Name="idArtista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBanda__idCiud__4F7CD00D">
+          <End Role="tblCiudad" Type="Self.tblCiudad" Multiplicity="1" />
+          <End Role="tblBanda" Type="Self.tblBanda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCiudad">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblBanda">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBandaA__idBan__52593CB8">
+          <End Role="tblBanda" Type="Self.tblBanda" Multiplicity="1" />
+          <End Role="tblBandaArt" Type="Self.tblBandaArt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBanda">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblBandaArt">
+              <PropertyRef Name="idBanda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInscri__idBan__5629CD9C">
+          <End Role="tblBanda" Type="Self.tblBanda" Multiplicity="1" />
+          <End Role="tblInscrip" Type="Self.tblInscrip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBanda">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblInscrip">
+              <PropertyRef Name="idBanda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBandaA__idIns__5441852A">
+          <End Role="tblInstrum" Type="Self.tblInstrum" Multiplicity="1" />
+          <End Role="tblBandaArt" Type="Self.tblBandaArt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstrum">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblBandaArt">
+              <PropertyRef Name="idInstrum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDetIns__idBan__5812160E">
+          <End Role="tblBandaArt" Type="Self.tblBandaArt" Multiplicity="1" />
+          <End Role="tblDetInsc" Type="Self.tblDetInsc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBandaArt">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblDetInsc">
+              <PropertyRef Name="idBandArt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCiudad__idDpt__4D94879B">
+          <End Role="tblDpto" Type="Self.tblDpto" Multiplicity="1" />
+          <End Role="tblCiudad" Type="Self.tblCiudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDpto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblCiudad">
+              <PropertyRef Name="idDpto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEvento__idCiu__4CA06362">
+          <End Role="tblCiudad" Type="Self.tblCiudad" Multiplicity="1" />
+          <End Role="tblEvento" Type="Self.tblEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCiudad">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblEvento">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDetIns__idNro__571DF1D5">
+          <End Role="tblInscrip" Type="Self.tblInscrip" Multiplicity="1" />
+          <End Role="tblDetInsc" Type="Self.tblDetInsc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInscrip">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblDetInsc">
+              <PropertyRef Name="idNroInsc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInscri__idEve__5535A963">
+          <End Role="tblEvento" Type="Self.tblEvento" Multiplicity="1" />
+          <End Role="tblInscrip" Type="Self.tblInscrip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEvento">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tblInscrip">
+              <PropertyRef Name="idEvento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdEventosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblArtistas" EntityType="Self.tblArtista" />
+          <EntitySet Name="tblBandas" EntityType="Self.tblBanda" />
+          <EntitySet Name="tblBandaArts" EntityType="Self.tblBandaArt" />
+          <EntitySet Name="tblCiudads" EntityType="Self.tblCiudad" />
+          <EntitySet Name="tblDetInscs" EntityType="Self.tblDetInsc" />
+          <EntitySet Name="tblDptoes" EntityType="Self.tblDpto" />
+          <EntitySet Name="tblEventoes" EntityType="Self.tblEvento" />
+          <EntitySet Name="tblGeneroes" EntityType="Self.tblGenero" />
+          <EntitySet Name="tblInscrips" EntityType="Self.tblInscrip" />
+          <EntitySet Name="tblInstrums" EntityType="Self.tblInstrum" />
+          <EntitySet Name="tblTipoDocs" EntityType="Self.tblTipoDoc" />
+          <AssociationSet Name="FK__tblArtist__idCiu__5165187F" Association="Self.FK__tblArtist__idCiu__5165187F">
+            <End Role="tblCiudad" EntitySet="tblCiudads" />
+            <End Role="tblArtista" EntitySet="tblArtistas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblArtist__idGen__5070F446" Association="Self.FK__tblArtist__idGen__5070F446">
+            <End Role="tblGenero" EntitySet="tblGeneroes" />
+            <End Role="tblArtista" EntitySet="tblArtistas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblArtist__idtip__4E88ABD4" Association="Self.FK__tblArtist__idtip__4E88ABD4">
+            <End Role="tblTipoDoc" EntitySet="tblTipoDocs" />
+            <End Role="tblArtista" EntitySet="tblArtistas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBandaA__idArt__534D60F1" Association="Self.FK__tblBandaA__idArt__534D60F1">
+            <End Role="tblArtista" EntitySet="tblArtistas" />
+            <End Role="tblBandaArt" EntitySet="tblBandaArts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBanda__idCiud__4F7CD00D" Association="Self.FK__tblBanda__idCiud__4F7CD00D">
+            <End Role="tblCiudad" EntitySet="tblCiudads" />
+            <End Role="tblBanda" EntitySet="tblBandas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBandaA__idBan__52593CB8" Association="Self.FK__tblBandaA__idBan__52593CB8">
+            <End Role="tblBanda" EntitySet="tblBandas" />
+            <End Role="tblBandaArt" EntitySet="tblBandaArts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInscri__idBan__5629CD9C" Association="Self.FK__tblInscri__idBan__5629CD9C">
+            <End Role="tblBanda" EntitySet="tblBandas" />
+            <End Role="tblInscrip" EntitySet="tblInscrips" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBandaA__idIns__5441852A" Association="Self.FK__tblBandaA__idIns__5441852A">
+            <End Role="tblInstrum" EntitySet="tblInstrums" />
+            <End Role="tblBandaArt" EntitySet="tblBandaArts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDetIns__idBan__5812160E" Association="Self.FK__tblDetIns__idBan__5812160E">
+            <End Role="tblBandaArt" EntitySet="tblBandaArts" />
+            <End Role="tblDetInsc" EntitySet="tblDetInscs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCiudad__idDpt__4D94879B" Association="Self.FK__tblCiudad__idDpt__4D94879B">
+            <End Role="tblDpto" EntitySet="tblDptoes" />
+            <End Role="tblCiudad" EntitySet="tblCiudads" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEvento__idCiu__4CA06362" Association="Self.FK__tblEvento__idCiu__4CA06362">
+            <End Role="tblCiudad" EntitySet="tblCiudads" />
+            <End Role="tblEvento" EntitySet="tblEventoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDetIns__idNro__571DF1D5" Association="Self.FK__tblDetIns__idNro__571DF1D5">
+            <End Role="tblInscrip" EntitySet="tblInscrips" />
+            <End Role="tblDetInsc" EntitySet="tblDetInscs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInscri__idEve__5535A963" Association="Self.FK__tblInscri__idEve__5535A963">
+            <End Role="tblEvento" EntitySet="tblEventoes" />
+            <End Role="tblInscrip" EntitySet="tblInscrips" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdEventosModelStoreContainer" CdmEntityContainer="bdEventosEntities">
+          <EntitySetMapping Name="tblArtistas">
+            <EntityTypeMapping TypeName="bdEventosModel.tblArtista">
+              <MappingFragment StoreEntitySet="tblArtista">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idtipoDoc" ColumnName="idtipoDoc" />
+                <ScalarProperty Name="nroDoc" ColumnName="nroDoc" />
+                <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+                <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBandas">
+            <EntityTypeMapping TypeName="bdEventosModel.tblBanda">
+              <MappingFragment StoreEntitySet="tblBanda">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="AnioFund" ColumnName="AnioFund" />
+                <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBandaArts">
+            <EntityTypeMapping TypeName="bdEventosModel.tblBandaArt">
+              <MappingFragment StoreEntitySet="tblBandaArt">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="idBanda" ColumnName="idBanda" />
+                <ScalarProperty Name="idArtista" ColumnName="idArtista" />
+                <ScalarProperty Name="idInstrum" ColumnName="idInstrum" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCiudads">
+            <EntityTypeMapping TypeName="bdEventosModel.tblCiudad">
+              <MappingFragment StoreEntitySet="tblCiudad">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idDpto" ColumnName="idDpto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDetInscs">
+            <EntityTypeMapping TypeName="bdEventosModel.tblDetInsc">
+              <MappingFragment StoreEntitySet="tblDetInsc">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="idNroInsc" ColumnName="idNroInsc" />
+                <ScalarProperty Name="idBandArt" ColumnName="idBandArt" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDptoes">
+            <EntityTypeMapping TypeName="bdEventosModel.tblDpto">
+              <MappingFragment StoreEntitySet="tblDpto">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEventoes">
+            <EntityTypeMapping TypeName="bdEventosModel.tblEvento">
+              <MappingFragment StoreEntitySet="tblEvento">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Lugar" ColumnName="Lugar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGeneroes">
+            <EntityTypeMapping TypeName="bdEventosModel.tblGenero">
+              <MappingFragment StoreEntitySet="tblGenero">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInscrips">
+            <EntityTypeMapping TypeName="bdEventosModel.tblInscrip">
+              <MappingFragment StoreEntitySet="tblInscrip">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="idEvento" ColumnName="idEvento" />
+                <ScalarProperty Name="idBanda" ColumnName="idBanda" />
+                <ScalarProperty Name="Represenante" ColumnName="Represenante" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInstrums">
+            <EntityTypeMapping TypeName="bdEventosModel.tblInstrum">
+              <MappingFragment StoreEntitySet="tblInstrum">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTipoDocs">
+            <EntityTypeMapping TypeName="bdEventosModel.tblTipoDoc">
+              <MappingFragment StoreEntitySet="tblTipoDoc">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

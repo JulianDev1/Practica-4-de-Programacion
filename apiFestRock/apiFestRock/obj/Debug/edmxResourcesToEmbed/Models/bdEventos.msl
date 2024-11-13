@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdEventosModelStoreContainer" CdmEntityContainer="bdEventosEntities">
+    <EntitySetMapping Name="tblArtistas">
+      <EntityTypeMapping TypeName="bdEventosModel.tblArtista">
+        <MappingFragment StoreEntitySet="tblArtista">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="idtipoDoc" ColumnName="idtipoDoc" />
+          <ScalarProperty Name="nroDoc" ColumnName="nroDoc" />
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBandas">
+      <EntityTypeMapping TypeName="bdEventosModel.tblBanda">
+        <MappingFragment StoreEntitySet="tblBanda">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="AnioFund" ColumnName="AnioFund" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBandaArts">
+      <EntityTypeMapping TypeName="bdEventosModel.tblBandaArt">
+        <MappingFragment StoreEntitySet="tblBandaArt">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="idBanda" ColumnName="idBanda" />
+          <ScalarProperty Name="idArtista" ColumnName="idArtista" />
+          <ScalarProperty Name="idInstrum" ColumnName="idInstrum" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCiudads">
+      <EntityTypeMapping TypeName="bdEventosModel.tblCiudad">
+        <MappingFragment StoreEntitySet="tblCiudad">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="idDpto" ColumnName="idDpto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDetInscs">
+      <EntityTypeMapping TypeName="bdEventosModel.tblDetInsc">
+        <MappingFragment StoreEntitySet="tblDetInsc">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="idNroInsc" ColumnName="idNroInsc" />
+          <ScalarProperty Name="idBandArt" ColumnName="idBandArt" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDptoes">
+      <EntityTypeMapping TypeName="bdEventosModel.tblDpto">
+        <MappingFragment StoreEntitySet="tblDpto">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEventoes">
+      <EntityTypeMapping TypeName="bdEventosModel.tblEvento">
+        <MappingFragment StoreEntitySet="tblEvento">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Lugar" ColumnName="Lugar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGeneroes">
+      <EntityTypeMapping TypeName="bdEventosModel.tblGenero">
+        <MappingFragment StoreEntitySet="tblGenero">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInscrips">
+      <EntityTypeMapping TypeName="bdEventosModel.tblInscrip">
+        <MappingFragment StoreEntitySet="tblInscrip">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="idEvento" ColumnName="idEvento" />
+          <ScalarProperty Name="idBanda" ColumnName="idBanda" />
+          <ScalarProperty Name="Represenante" ColumnName="Represenante" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInstrums">
+      <EntityTypeMapping TypeName="bdEventosModel.tblInstrum">
+        <MappingFragment StoreEntitySet="tblInstrum">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTipoDocs">
+      <EntityTypeMapping TypeName="bdEventosModel.tblTipoDoc">
+        <MappingFragment StoreEntitySet="tblTipoDoc">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
